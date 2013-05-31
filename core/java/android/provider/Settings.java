@@ -2488,6 +2488,12 @@ public final class Settings {
         public static final String STATUSBAR_CLOCK_WEEKDAY = "statusbar_clock_weekday";
 
         /**
+         * This should be an Int representing the Font Size in SP.
+         * @hide
+        */
+        public static final String STATUSBAR_FONT_SIZE = "statusbar_font_size";
+
+        /**
          * Show the pending notification counts as overlays on the statusbar
          * @hide
          */
@@ -5489,13 +5495,6 @@ public final class Settings {
         public static final String UI_INVERTED_MODE = "ui_inverted_mode";
 
         /**
-         * force UI mode change for methods which are not observing
-         * UiModeManagerService
-         * @hide
-         */
-        public static final String UI_MODE_IS_TOGGLED = "ui_mode_is_toggled";
-
-        /**
          * Whether screensavers are enabled.
          * @hide
          */
@@ -5580,7 +5579,6 @@ public final class Settings {
             MOUNT_UMS_NOTIFY_ENABLED,
             UI_NIGHT_MODE,
             UI_INVERTED_MODE,
-            UI_MODE_IS_TOGGLED,
             LOCK_SCREEN_OWNER_INFO,
             LOCK_SCREEN_OWNER_INFO_ENABLED
         };
