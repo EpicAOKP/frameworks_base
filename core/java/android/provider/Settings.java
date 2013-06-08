@@ -1010,6 +1010,20 @@ public final class Settings {
         }
 
         /**
+         * Look up a name in the database.
+         * @param resolver to access the database with
+         * @param name to look up in the table
+         * @param defaultValue returned if value is null
+         * @return the corresponding value, or default if not present
+         */
+        public synchronized static String getString(ContentResolver resolver,
+                String name, String defaultValue) {
+
+            String value = getString(resolver, name);
+            return value == null ? defaultValue: value;
+        }
+
+        /**
          * Store a name/value pair into the database.
          * @param resolver to access the database with
          * @param name to store
@@ -2488,12 +2502,6 @@ public final class Settings {
         public static final String STATUSBAR_CLOCK_WEEKDAY = "statusbar_clock_weekday";
 
         /**
-         * This should be an Int representing the Font Size in SP.
-         * @hide
-        */
-        public static final String STATUSBAR_FONT_SIZE = "statusbar_font_size";
-
-        /**
          * Show the pending notification counts as overlays on the statusbar
          * @hide
          */
@@ -3097,6 +3105,12 @@ public final class Settings {
         };
 
         /**
+         *
+         * @hide
+         */
+        public static final String LOCKSCREEN_GLOW_TORCH = "lockscreen_glow_torch";
+
+        /**
          * Whether to use the custom quick unlock screen control
          * @hide
          */
@@ -3642,6 +3656,8 @@ public final class Settings {
          * @hide
          */
         public static final String MVNO_ROAMING = "mvno_roaming";
+
+        public static final String THEME_WALLPAPER = "theme_wallpaper";
 
         /**
          * Settings to backup. This is here so that it's in the same place as the settings
